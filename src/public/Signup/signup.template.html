@@ -1,0 +1,39 @@
+<div class="container">
+
+  <fieldset>
+  <legend class="form">Sign up form</legend>
+  <form name="NewsletterForm" nonvalidate>
+    <input class="form" type="text" name="firstname" value="" placeholder="Enter first name" ng-model="signupctrl.info.firstname" required>
+    <span ng-if="NewsletterForm.firstname.$error.required && NewsletterForm.firstname.$touched">First name is required</span>
+    <br>
+    <input class="form" type="text" name="lastname" value="" placeholder="Enter last name"  ng-model="signupctrl.info.lastname"required>
+    <span ng-if="NewsletterForm.lastname.$error.required && NewsletterForm.lastname.$touched">Last name is required</span>
+    <br>
+    <input class="form" type="email" name="email" value="" placeholder="Enter Email"  ng-model="signupctrl.info.email" required>
+    <span ng-if="NewsletterForm.email.$invalid && NewsletterForm.email.$touched">valid email is required</span>
+    <br>
+    <input class="form" type="text" name="phone" value="" placeholder="Enter Phone no."  ng-model="signupctrl.info.phone" required>
+    <span ng-if="NewsletterForm.phone.$error.required && NewsletterForm.phone.$touched">Phone no. is required</span>
+    <br>
+    <input class="form" type="text" name="favdish" value="" placeholder="Enter short name of favorite dish" ng-model="signupctrl.info.favdish" required>
+    <span ng-if="NewsletterForm.favdish.$error.required && NewsletterForm.favdish.$touched">Favorite dish is required</span>
+    <br>
+    <button class="form" type="button" name="submit" ng-disabled="NewsletterForm.$invalid" ng-click="signupctrl.submit()">Submit</button>
+  </form>
+  </fieldset>
+
+</div>
+<!-- <div ng-if="signupctrl.valid">
+  {{signupctrl.info.firstname}}
+  {{signupctrl.info.lastname}}
+  {{signupctrl.info.email}}
+  {{signupctrl.info.phone}}
+  {{signupctrl.info.favdish}}
+</div> -->
+<div ng-if="signupctrl.valid">
+Your information has been saved  
+</div>
+<div class="">
+  <button class="form" type="button" name="button" ng-click="signupctrl.check()">check</button>
+  {{signupctrl.array}}
+</div>
