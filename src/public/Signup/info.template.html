@@ -1,8 +1,29 @@
 <div class="container">
-  <h1>in info template</h1>
-  {{infoctrl.array_empty}}
-  <div ng-if="infoctrl.array_empty">
+  <!-- <button type="button" name="button" ng-click="infoctrl.asach()">assacah</button> -->
+  <div ng-if="infoctrl.info.firstname===undefined">
     Not Signed Up Yet.
     <button class="form" type="button" name="button" ui-sref="signup">Sign up Now!!</button>
+  </div>
+  <div ng-if="(infoctrl.favorite==='Error') && !(infoctrl.info.firstname===undefined)">
+    Short name Does not exist.
+  </div>
+  <div ng-if="!(infoctrl.info.firstname===undefined) && !(infoctrl.favorite==='Error')">
+    <!-- <div  ng-repeat="info in infoctrl.arrayInfo"> -->
+      <div class="info">
+        First Name: {{infoctrl.info.firstname}}
+        Last Name:  {{infoctrl.info.lastname}}
+        Phone:  {{infoctrl.info.phone}}
+        Email:  {{infoctrl.info.email}}
+        Favorite Dish:  {{infoctrl.info.favdish}}
+        Description:  {{infoctrl.favorite.description}}
+      </div>
+      <div class="menu-item-photo">
+
+        <img class="img-responsive" width="250" height="150" ng-src="{{infoctrl.ApiPath}}/images/{{infoctrl.info.favdish}}.jpg" >
+      </div>
+      <!-- discription and error when short_name is not correct -->
+      <!-- write another resolve in routes to get data. call getMenuItems() of MenuService  -->
+
+    <!-- </div> -->
   </div>
 </div>

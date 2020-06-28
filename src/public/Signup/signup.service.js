@@ -1,23 +1,28 @@
 angular.module('public')
 .service('SignupService',SignupService);
 
-function SignupService() {
+SignupService.$inject =['$http'];
+function SignupService($http) {
   var service = this;
-  var arrayInfo=[];
+  var info={};
   var array_empty=1;
-  service.add_info = function (info){
-    arrayInfo.push(info);
-    console.log("push operation succes");
+  var ApiPath ='https://tejas-git103.herokuapp.com';
+  service.add_info = function (info1){
+    info = info1;
   }
 
-  service.get_array = function () {
-    return arrayInfo;
-  }
-  service.setArrayEmpty = function () {
-    array_empty = 0;
+  service.get_info = function () {
+    return info;
   }
 
-  service.getArrayEmpty = function () {
-    return array_empty;
-  }
+  service.get_data = function () {
+    return $http.get(ApiPath + '/menu_items/'+ info.favdish + '.json').then(function (response) {
+      return response.data;
+    },function (response) {
+      return "Error";
+    });
+
+  };
+
+
 }

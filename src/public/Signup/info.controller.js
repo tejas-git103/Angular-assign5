@@ -1,19 +1,15 @@
 angular.module('public')
 .controller('InformationController',InformationController);
 
-InformationController.$inject = ['SignupService'];
+InformationController.$inject = ['info', 'SignupService','favorite'];
 
-function InformationController() {
-  var infoctrl = this;
-  infoctrl.array_empty=1;
-  this.$oninit = function () {
-    console.log(array_empty);
-    infoctrl.array_empty = SignupService.getArrayEmpty();
-    console.log("infoctrl.array_empty===0"+infoctrl.array_empty===0);
+function InformationController(info,SignupService,favorite) {
+    var infoctrl = this;
+    infoctrl.info = info;
+    infoctrl.favorite = favorite;
+    console.log(infoctrl.favorite);
+    console.log(infoctrl.favorite.description);
+    infoctrl.ApiPath='https://tejas-git103.herokuapp.com';
+
+
   }
-
-  //we need to set array empty to 0 after push operation of signupctrl
-//maybe service can inject controller and write a function that eill be called in service
-//look for component lifecyle properties something *****imp
-
-}

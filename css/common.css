@@ -45,3 +45,9 @@ button.form{
 legend.form{
   color: white;
 }
+
+div.info{
+  white-space: pre-line;
+  font-size: 20px;
+
+}

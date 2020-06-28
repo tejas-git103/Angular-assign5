@@ -49,7 +49,16 @@ function routeConfig ($stateProvider) {
     .state('info',{
       url:'/info',
       templateUrl:'src/public/signup/info.template.html',
-      controller:'InformationController as infoctrl'
+      controller:'InformationController as infoctrl',
+      resolve:{
+        info:['SignupService',function (SignupService) {
+          return SignupService.get_info();
+        }],
+        favorite:['SignupService',function (SignupService){
+          return SignupService.get_data();
+
+        }]
+      }
 
     });
 }
