@@ -4,7 +4,7 @@ angular.module('public')
 SignupService.$inject =['$http'];
 function SignupService($http) {
   var service = this;
-  var info={favdish:'B1'};
+  var info={};
   var array_empty=1;
   var ApiPath ='https://tejas-git103.herokuapp.com';
   service.add_info = function (info1){
