@@ -41,12 +41,12 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
-    .state('signup',{
+    .state('public.signup',{
       url:'/signup',
       templateUrl:'src/public/signup/signup.template.html',
       controller:'SignupController as signupctrl'
     })
-    .state('info',{
+    .state('public.info',{
       url:'/info',
       templateUrl:'src/public/signup/info.template.html',
       controller:'InformationController as infoctrl',
