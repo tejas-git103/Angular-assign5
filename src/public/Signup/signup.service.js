@@ -12,11 +12,11 @@
     var ApiPath ='https://tejas-git103.herokuapp.com';
     service.add_info = function (info1){
       info = info1;
-    }
+    };
 
     service.get_info = function () {
       return info;
-    }
+    };
 
     service.get_data = function () {
       return $http.get(ApiPath + '/menu_items/'+ info.favdish + '.json').then(function (response) {

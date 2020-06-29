@@ -14,14 +14,14 @@
       phone:'',
       email:'',
       favdish:''
-    }
+    };
     signupctrl.submit = function () {
       signupctrl.valid = 1;
       SignupService.add_info(signupctrl.info);
       // signupctrl.array.push(signupctrl.info);
       // signupctrl.info = undefined; //coz when we change value in input inserted values are changed coz both refered same variable
       // delete(signupctrl.info);
-    }
+    };
 
     // signupctrl.check = function () {
     //   signupctrl.array = SignupService.get_array();
